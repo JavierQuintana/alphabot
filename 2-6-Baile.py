@@ -1,0 +1,14 @@
+import RPi.GPIO as GPIO
+import time
+
+import MOVIMIENTOS
+
+MOVIMIENTOS.FORDWARD(50)
+time.sleep(1)
+MOVIMIENTOS.BACKWARD(50)
+time.sleep(1)
+MOVIMIENTOS.LEFT(50)
+time.sleep(1)
+MOVIMIENTOS.RIGHT(50)
+time.sleep(1)
+MOVIMIENTOS.STOP()

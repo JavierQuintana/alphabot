@@ -1,0 +1,57 @@
+import RPi.GPIO as GPIO
+###########MOTORES
+IN1=12
+IN2=13
+ENA=6
+IN3=20
+IN4=21
+ENB=26
+########SENSOR VELOCIDAD MOTORES
+DataMotorR = 7
+DataMotorL = 8
+##########SENSOR OBSTACULOS IR
+DR = 16
+DL = 19
+########SENSOR CONTROL REMOTO IR
+IR = 18
+PWM = 50
+########SENSOR SIGUELINEAS
+CS = 5
+Clock = 25
+Address = 24
+DataOut = 23
+########SENSOR SERVOS BRAZO ROBOT
+SERVOEJEX = 22
+SERVOEJEZ = 27
+##############CONFIGURACION GPIO ENTRADAS SALIDAS ####
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+#########################MOTORES
+GPIO.setup(IN1,GPIO.OUT)
+GPIO.setup(IN2,GPIO.OUT)
+GPIO.setup(IN3,GPIO.OUT)
+GPIO.setup(IN4,GPIO.OUT)
+GPIO.setup(ENA,GPIO.OUT)
+GPIO.setup(ENB,GPIO.OUT)
+#################### VELOCIDAD DE LOS MOTORES
+PWMA = GPIO.PWM(ENA,500)
+PWMB = GPIO.PWM(ENB,500)
+##################SENSOR VELOCIDAD MOTORES
+GPIO.setup(DataMotorR,GPIO.IN)
+GPIO.setup(DataMotorL,GPIO.IN)
+####################SENSORES OBSTACULOS IR
+GPIO.setup(DR,GPIO.IN)
+GPIO.setup(DL,GPIO.IN)
+####################SENSOR CONTROL REMOTO IR
+GPIO.setup(IR,GPIO.IN,GPIO.PUD_UP)
+####################SENSOR SIGUELINEAS
+GPIO.setup(Clock,GPIO.OUT)
+GPIO.setup(Address,GPIO.OUT)
+GPIO.setup(CS,GPIO.OUT)
+GPIO.setup(DataOut,GPIO.IN,GPIO.PUD_UP)
+############# SERVOS BRAZO ROBOT
+GPIO.setup(SERVOEJEX, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(SERVOEJEZ, GPIO.OUT, initial=GPIO.LOW)
+
+
+
